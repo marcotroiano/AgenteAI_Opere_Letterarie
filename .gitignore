@@ -1,0 +1,38 @@
+# ==============================================================================
+# FILE: .gitignore
+# OBIETTIVO: Indicare a Git (e GitHub/GitLab) quali file e cartelle NON devono
+# mai essere tracciati né caricati online. Serve a proteggere le chiavi segrete,
+# gli IP aziendali e a non appesantire il server con file temporanei locali.
+# ==============================================================================
+
+# 1. CREDENZIALI E SEGRETI AZIENDALI (Massima Sicurezza)
+# Qui teniamo al sicuro l'URL del server aziendale, i modelli e gli indirizzi IP
+.env
+
+# 2. AMBIENTE VIRTUALE E CACHE (Pulizia del codice)
+# Non si caricano mai le librerie scaricate, chi clona il progetto le reinstallerà
+.venv/
+venv/
+__pycache__/
+
+# 3. IMPOSTAZIONI DELL'IDE (PyCharm)
+# Evita di caricare online i file di configurazione personale del tuo editor
+.idea/
+
+# 4. DATABASE VETTORIALE LOCALE (Storage pesante)
+# Questa cartella viene creata da Qdrant per salvare i vettori su SSD.
+# NON deve essere caricata perché pesa tantissimo e dipende dall'hardware locale.
+mio_database_vettoriale/
+
+# 5. DATASET E CARTELLE TEMPORANEE
+# Escludiamo i file di test temporanei.
+# Per il dataset, escludiamo i file JSON pesanti ma forziamo Git a mantenere
+# la struttura della cartella vuota tramite l'eccezione sul file .gitkeep.
+dataset_temp/
+dataset/*.json
+!dataset/.gitkeep
+
+# 6. FILE DI LOG E SISTEMA OPERATIVO
+# Esclude i log testuali di errore generati dal codice e i file nascosti di sistema
+*.log
+.DS_Store
