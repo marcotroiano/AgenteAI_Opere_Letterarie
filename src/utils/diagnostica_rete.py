@@ -10,9 +10,9 @@ warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 # CONFIGURAZIONE TARGET
 # ==============================================================================
 # Inserisci qui l'IP aziendale fornito
-ip_azienda = "172.24.172.59"
+ip_azienda = "IP_AZIENDALE"
 # Inserisci la porta specifica su cui vuoi fare il test HTTP (es. quella di Ollama)
-porta_http = "11434"
+porta_http = "PORTA"
 
 # ==============================================================================
 # FASE 1: TEST HTTP/HTTPS SULLA PORTA SPECIFICA (Test Ollama/Web Server)
